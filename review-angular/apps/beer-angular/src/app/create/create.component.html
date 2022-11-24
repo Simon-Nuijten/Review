@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center">
+            Een <span class="title-blue">biertje</span> aanmaken
+        </h1>
+        <form #form="ngForm" (ngSubmit)="onSubmit()" class="px-0 px-lg-5" novalidate>
+            <div class="form-row">
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="name" class="mb-1 fw-bold">Naam</label>
+                    <input type="text" name="name" class="form-control" id="name" [(ngModel)]="beer.name" #name="ngModel" minlength="3" required />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-1">
+                        <div *ngIf="name.errors!['required']">Naam is verplicht</div>
+                        <div *ngIf="name.errors!['minlength']">
+                            Naam moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="description" class="mb-1 fw-bold">Omschrijving</label>
+                    <textarea name="description" class="form-control" id="description" required [(ngModel)]="beer.description" #description="ngModel" minlength="3" required></textarea>
+                    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger mt-1">
+                        <div *ngIf="description.errors!['required']">
+                            Omschrijving is verplicht
+                        </div>
+                        <div *ngIf="description.errors!['minlength']">
+                            Omschrijving moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="artist" class="mb-1 fw-bold">Alcohol %</label>
+                    <input type="number" name="artist" class="form-control" id="artist" [(ngModel)]="beer.alcohol" #artist="ngModel" minlength="3" required />
+                    <div *ngIf="artist.invalid && (artist.dirty || artist.touched)" class="alert alert-danger mt-1">
+                        <div *ngIf="artist.errors!['required']">Artiest is verplicht.</div>
+                        <div *ngIf="artist.errors!['minlength']">
+                            Artiest moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="price" class="mb-1 fw-bold">Prijs</label>
+                    <input type="number" name="price" class="form-control" step="1" id="price" [(ngModel)]="beer.price" #price="ngModel" min="1" required />
+                    <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger mt-1">
+                        <div *ngIf="price.errors!['required']">Prijs is verplicht.</div>
+                        <div *ngIf="price.errors!['min']">
+                            Prijs moet groter zijn dan 0€.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mx-auto mb-3 flex-xl-row flex-column d-flex justify-content-between">
+                <a routerLink=".." class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Ga terug</a
+        >
+        <button
+          class="btn primary-btn mt-3"
+          [disabled]="!form.valid"
+          type="submit"
+        >
+          Aanmaken <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.card {
+    text-align: center;
+    margin: 0 auto;
+}
+.detailImage:hover {
+    transform: scale(1.1); 
+}
+.detailImage {
+    transition: transform .2s;
+}
+#createButton {
+    border: solid;
+    border-color: #000000;
+    padding: 1%;
+    margin:2.5%;
+}
