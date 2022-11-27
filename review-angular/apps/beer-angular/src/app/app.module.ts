@@ -17,6 +17,7 @@ import { CreateComponent } from './create/create.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { ReviewPostComponent } from './review-post/review-post.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EditComponent } from './edit/edit.component';
     DetailComponent,
     CreateComponent,
     EditComponent,
+    ReviewPostComponent,
   ],
   imports: [
     BrowserModule,

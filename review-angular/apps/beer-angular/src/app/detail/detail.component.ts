@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Beer } from 'libs/objects/src/lib/beer';
+import { Review } from 'libs/objects/src/lib/review';
 import { BeerService } from '../../../../../libs/services/src/lib/beer.service'
 
 @Component({
@@ -12,6 +13,7 @@ export class DetailComponent implements OnInit {
 
   id: string | null | undefined;
   beer: Beer | undefined;
+  review: Review[] | undefined;
 
   constructor(private route: ActivatedRoute, private router: Router, private serviceBeer: BeerService) { 
   }
@@ -21,6 +23,7 @@ export class DetailComponent implements OnInit {
       this.id = params.get("id");
       if (this.id) {
           this.beer = this.serviceBeer.getBeerById(this.id);
+          this.review = this.serviceBeer.getReviewForBeer(this.id);
       } else{
         this.router.navigateByUrl('concerten');
       }

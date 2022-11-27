@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12">
+      <h1 class="text-center">
+          Een <span class="title-blue">Review</span> aanmaken
+      </h1>
+      <form #form="ngForm" (ngSubmit)="onSubmit()" class="px-0 px-lg-5" novalidate>
+          <div class="form-row">
+              <div class="col-12 mb-4 mx-auto">
+                  <label for="name" class="mb-1 fw-bold">Rating</label>
+                  <input type="number" name="rating" class="form-control" id="rating" [(ngModel)]="review.rating" #rating="ngModel" required />
+                  <div *ngIf="rating.invalid && (rating.dirty || rating.touched)" class="alert alert-danger mt-1">
+                      <div *ngIf="rating.errors!['required']">Rating is verplicht</div>
+                  </div>
+              </div>
+              <div class="col-12 mb-4 mx-auto">
+                  <label for="description" class="mb-1 fw-bold">Omschrijving</label>
+                  <textarea name="comment" class="form-control" id="comment" required [(ngModel)]="review.comment" #comment="ngModel" minlength="3" required></textarea>
+                  <div *ngIf="comment.invalid && (comment.dirty || comment.touched)" class="alert alert-danger mt-1">
+                      <div *ngIf="comment.errors!['required']">
+                          Omschrijving is verplicht
+                      </div>
+                      <div *ngIf="comment.errors!['minlength']">
+                          Omschrijving moet minimaal 3 karakters lang zijn.
+                      </div>
+                  </div>
+              </div>
+              
+          <div class="col-12 mx-auto mb-3 flex-xl-row flex-column d-flex justify-content-between">
+              <a routerLink=".." class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Ga terug</a
+      ></div>
+      <button
+        class="btn primary-btn mt-3"
+        [disabled]="!form.valid"
+        type="submit"
+      >
+        Aanmaken <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </form>
+</div>
+</div>
