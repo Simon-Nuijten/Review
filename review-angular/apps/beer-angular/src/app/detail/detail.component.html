@@ -21,9 +21,11 @@
                     <div class="user-about"> <span class="font-weight-bold d-block">Alex Smith</span> <span class="u-color">Rating: {{review.rating}}</span>
                         <div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
                     </div>
+                    <li class="list-group-item text-danger"><a (click)="deleteReview(review)" class="btn create-btn edit-btn delete-btn">Verwijderen</a></li>
                     <div class="user-image"> <img src="https://img.myloview.com/posters/default-avatar-profile-in-trendy-style-for-social-media-user-icon-400-228654852.jpg" class="rounded-circle" width="70"> </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- <li class="list-group-item text-danger"><a (click)="deleteBeer(review)" class="btn create-btn edit-btn delete-btn">Verwijderen</a></li> -->

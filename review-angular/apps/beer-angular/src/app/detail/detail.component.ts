@@ -25,8 +25,12 @@ export class DetailComponent implements OnInit {
           this.beer = this.serviceBeer.getBeerById(this.id);
           this.review = this.serviceBeer.getReviewForBeer(this.id);
       } else{
-        this.router.navigateByUrl('concerten');
+        
       }
     });
+  }
+  deleteReview(review: Review): void {
+    this.serviceBeer.removeReview(review);
+    this.serviceBeer.getReviewForBeer(this.beer!.id);
   }
 }

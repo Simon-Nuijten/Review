@@ -99,4 +99,9 @@ export class BeerService {
     review.id = id.toString();
     beer.review?.push(review);    
   }
+  removeReview(gettonReview: Review){
+    const beerFilterd = this.beerList.filter((beer: Beer) => beer.id === gettonReview.beerId)[0];
+    const index = beerFilterd.review!.findIndex(item => item.id === gettonReview.beerId);
+    beerFilterd.review?.splice(index!, 1);
+  }
 }

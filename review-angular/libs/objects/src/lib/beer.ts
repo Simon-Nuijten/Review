@@ -1,6 +1,6 @@
 import { Review } from "./review";
 
-export interface Beer {  
+export interface Beer {
     id: string;
     name : string | undefined;
     description:string | undefined;
